@@ -1,0 +1,40 @@
+{
+  "name": "mathextra",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "mathextra/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/mathextra",
+        "main": "mathextra/src/index.ts",
+        "tsConfig": "mathextra/tsconfig.lib.json",
+        "assets": ["mathextra/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["mathextra/**/*.ts", "mathextra/package.json"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "mathextra/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

@@ -15,4 +15,9 @@ describe('mathextra: fractions`', () => {
     const sum: Fraction = fraction(0).plus(fraction(5));
     expect(sum.toInteger()).toEqual(5);
   });
+
+  it('should add two non zero and positive numbers', () => {
+    const sum: Fraction = fraction(3).plus(fraction(4));
+    expect(sum.toInteger()).toEqual(7);
+  });
 });

@@ -5,4 +5,9 @@ describe('mathextra: fractions`', () => {
     const sum: Fraction = fraction(0).plus(fraction(0));
     expect(sum.toInteger()).toEqual(0);
   });
+
+  it('should add some number to zero', () => {
+    const sum: Fraction = fraction(3).plus(fraction(0));
+    expect(sum.toInteger()).toEqual(3);
+  });
 });

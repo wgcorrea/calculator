@@ -6,6 +6,6 @@ export type Fraction = {
 export const fraction = (numerator: number, denominator = 1): Fraction => {
   return {
     plus: (other: Fraction) => fraction(numerator, denominator),
-    toInteger: () => 0,
+    toInteger: () => numerator,
   };
 };

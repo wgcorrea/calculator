@@ -20,4 +20,9 @@ describe('mathextra: fractions`', () => {
     const sum: Fraction = fraction(3).plus(fraction(4));
     expect(sum.toInteger()).toEqual(7);
   });
+
+  it('should return a negative number adding number to a negative number', () => {
+    const sum: Fraction = fraction(-3).plus(fraction(1));
+    expect(sum.toInteger()).toEqual(-2);
+  });
 });

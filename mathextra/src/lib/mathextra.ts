@@ -1,3 +1,1 @@
-export function mathextra(): string {
-  return 'mathextra';
-}
+export * from './fraction';
